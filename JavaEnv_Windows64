@@ -20,6 +20,10 @@ set path=$env:JAVA_HOME+"\bin;"+$env:path
 $client.DownloadFile('http://dlsw.baidu.com/sw-search-sp/soft/e7/40642/Git-2.7.2-64-bit_setup.1457942968.exe', 'c:/Git-2.7.2-64-bit_setup.1457942968.exe')
 c:/Git-2.7.2-64-bit_setup.1457942968.exe
 
+#œ¬‘ÿmaven
+$client.DownloadFile('http://apache.fayea.com/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip', 'c:/apache-maven-3.3.9-bin.zip')
+set path="C:\apache-maven-3.3.9\bin;"+$env:path
+
 #œ¬‘ÿeclipse
 echo 'Start download eclipse...'
 $client.DownloadFile('http://mirrors.neusoft.edu.cn/eclipse/technology/epp/downloads/release/neon/3/eclipse-jee-neon-3-win32-x86_64.zip', 'c:/eclipse-jee-neon-3-win32-x86_64.zip')
