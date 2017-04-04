@@ -1,21 +1,25 @@
 #start powershell
 #set-executionpolicy remotesigned
 
-#ä¸‹è½½64ä½JDKå®‰è£…åŒ…
+#ÏÂÔØ64Î»JDK°²×°°ü
 echo 'Start download jdk-install pkg...'
 $client = new-object System.Net.WebClient
 $client.DownloadFile('http://sw.bos.baidu.com/sw-search-sp/software/97493bb4d1c00/jdk-8u121-windows-x64_8.0.1210.13.exe', 'c:/jdk-8u121-windows-x64_8.0.1210.13.exe')
 
-#è§¦å‘JDKé™é»˜å®‰è£…
+#´¥·¢JDK¾²Ä¬°²×°
 echo 'Install jdk silent...'
 c:/jdk-8u121-windows-x64_8.0.1210.13.exe /s
 
-#è®¾ç½®Javaç¯å¢ƒå˜é‡
+#ÉèÖÃJava»·¾³±äÁ¿
 echo 'Set env for java...'
 set JAVA_HOME="C:\Program Files\Java\jdk1.8.0_121"
 set CLASSPATH=".;"+$env:JAVA_HOME+"\lib\dt.jar;"+$env:JAVA_HOME+"\lib\tools.jar;"
 set path=$env:JAVA_HOME+"\bin;"+$env:path
 
-#ä¸‹è½½eclipse
+#ÏÂÔØgit
+$client.DownloadFile('http://dlsw.baidu.com/sw-search-sp/soft/e7/40642/Git-2.7.2-64-bit_setup.1457942968.exe', 'c:/Git-2.7.2-64-bit_setup.1457942968.exe')
+c:/Git-2.7.2-64-bit_setup.1457942968.exe
+
+#ÏÂÔØeclipse
 echo 'Start download eclipse...'
 $client.DownloadFile('http://mirrors.neusoft.edu.cn/eclipse/technology/epp/downloads/release/neon/3/eclipse-jee-neon-3-win32-x86_64.zip', 'c:/eclipse-jee-neon-3-win32-x86_64.zip')
