@@ -12,9 +12,9 @@ c:/jdk-8u121-windows-x64_8.0.1210.13.exe /s
 
 #设置Java环境变量
 echo 'Set env for java...'
-set JAVA_HOME="C:\Program Files\Java\jdk1.8.0_121"
-set CLASSPATH=".;"+$env:JAVA_HOME+"\lib\dt.jar;"+$env:JAVA_HOME+"\lib\tools.jar;"
-set path=$env:JAVA_HOME+"\bin;"+$env:path
+$Env:JAVA_HOME="C:\Program Files\Java\jdk1.8.0_121"
+$Env:CLASSPATH=".;"+$env:JAVA_HOME+"\lib\dt.jar;"+$env:JAVA_HOME+"\lib\tools.jar;"
+$Env:path=$env:JAVA_HOME+"\bin;"+$env:path
 
 #下载git
 echo 'Start download git-install pkg...'
@@ -25,7 +25,7 @@ c:/Git-2.7.2-64-bit_setup.1457942968.exe
 echo 'Start download maven-install pkg...'
 $client.DownloadFile('http://apache.fayea.com/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip', 'c:/apache-maven-3.3.9-bin.zip')
 echo 'Set env for maven...'
-set path="C:\apache-maven-3.3.9\bin;"+$env:path
+$Env:path="C:\apache-maven-3.3.9\bin;"+$env:path
 
 #下载eclipse
 echo 'Start download eclipse...'
